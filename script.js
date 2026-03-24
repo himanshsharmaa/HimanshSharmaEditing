@@ -3,10 +3,60 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
+    initHamburgerMenu();
+    initNavbarScroll();
     initSmoothScroll();
     initIntersectionObserver();
     initVideoHovers();
 });
+
+// Hamburger Menu Toggle
+function initHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (!hamburger || !navMenu) return;
+    
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickOnMenu = navMenu.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        
+        if (!isClickOnMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
+
+// Navbar Scroll Effect
+function initNavbarScroll() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // Smooth scroll for navigation links
 function initSmoothScroll() {
@@ -83,41 +133,7 @@ function initVideoHovers() {
     });
 }
 
-// Add scroll event for navbar effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-});
-
-// Performance: Throttle scroll events
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
-
-// Preload videos for better performance
-document.addEventListener('DOMContentLoaded', function() {
-    const videos = document.querySelectorAll('video');
-    videos.forEach(video => {
-        video.addEventListener('canplay', function() {
-            this.style.opacity = '1';
-        });
-    });
-});
-
-// Add keyboard navigation support
+// Keyboard navigation support
 document.addEventListener('keydown', function(e) {
     // Skip to next video section with arrow keys
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
