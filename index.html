@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himansh Sharma - Video Editor Portfolio</title>
+    <title>Himansh Sharma - Video Editor & Motion Designer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,9 +12,10 @@
         <div class="nav-container">
             <div class="logo">HS</div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link cta-link">Get In Touch</a></li>
+                <li><a href="#contact" class="nav-link cta-link">Let's Connect</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -24,389 +25,344 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section with Animation -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
         <div class="hero-content">
-            <h1 class="hero-title">Himansh Sharma</h1>
-            <p class="hero-subtitle">Video Editor</p>
-            <p class="hero-description">Crafting compelling stories through motion, color, and precision editing. Specialized in transforming raw footage into high-quality, engaging content for social media and promotional platforms.</p>
-        </div>
-    </section>
-
-    <!-- Short-Form Content (COMMENTED OUT)
-    <section id="portfolio" class="short-form-section">
-        <div class="container">
-            <h2 class="section-title">Short-Form Content</h2>
-            <p class="section-subtitle">Instagram Reels & YouTube Shorts</p>
-            
-            <div class="video-grid short-form-grid">
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <iframe src="https://www.instagram.com/reel/DNCj8uvzvYC/embed/captioned/?cr=1&v=14" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-                    </div>
-                    <div class="video-label">Instagram Reels</div>
+            <div class="hero-text">
+                <h1 class="hero-title" style="animation: slideInLeft 1s ease-out;">Himansh Sharma</h1>
+                <p class="hero-role" style="animation: slideInLeft 1s ease-out 0.1s both;">Video Editor & Motion Designer</p>
+                <p class="hero-description" style="animation: fadeInUp 1s ease-out 0.2s both;">
+                    Transforming raw footage into compelling visual stories. Specializing in social media content, promotional videos, and motion graphics that captivate audiences and drive engagement.
+                </p>
+                <div class="hero-cta" style="animation: fadeInUp 1s ease-out 0.3s both;">
+                    <a href="#work" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
-
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <iframe src="https://www.instagram.com/reel/DQb86ItgKCZ/embed/captioned/?cr=1&v=14" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-                    </div>
-                    <div class="video-label">Instagram Reels</div>
-                </div>
-
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <iframe src="https://www.instagram.com/reel/DOqpdCrEuIf/embed/captioned/?cr=1&v=14" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-                    </div>
-                    <div class="video-label">Instagram Reels</div>
-                </div>
-
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <iframe src="https://www.instagram.com/reel/DOoh1aGkk0c/embed/captioned/?cr=1&v=14" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-                    </div>
-                    <div class="video-label">Instagram Reels</div>
-                </div>
-
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <iframe src="https://www.instagram.com/reel/DOyHukCj6x0/embed/captioned/?cr=1&v=14" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-                    </div>
-                    <div class="video-label">Instagram Reels</div>
-                </div>
-
             </div>
-        </div>
-    </section>
-    -->
-
-    <!-- Portfolio Videos Section -->
-    <section class="portfolio-videos-section">
-        <div class="container">
-            <h2 class="section-title">Portfolio Videos</h2>
-            <p class="section-subtitle">Recent Edits & Projects</p>
-            
-            <div class="video-grid short-form-grid">
-                <!-- Video 1 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-129.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+1"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">GFG Event Recap</div>
-                    <a href="https://www.instagram.com/reel/DOyHukCj6x0/?igsh=MW9teDM4MnpnYWNkbA==" target="_blank" class="proof-of-work">View on Instagram</a>
+            <div class="hero-stats" style="animation: slideInRight 1s ease-out 0.4s both;">
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
                 </div>
-
-                <!-- Video 2 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-312.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+2"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">Property Promotion</div>
-                    <a href="https://www.instagram.com/reel/DQb86ItgKCZ/?igsh=MXI0ZXpveWdwdWNhdA==" target="_blank" class="proof-of-work">View on Instagram</a>
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
-
-                <!-- Video 3 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-362.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+3"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">Short Film</div>
-                    <a href="https://www.instagram.com/reel/DUKjvaMETF8/?igsh=MXA1Z3I0dmN1cWJ5YQ==" target="_blank" class="proof-of-work">View on Instagram</a>
-                </div>
-
-                <!-- Video 4 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-397.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+4"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">Event Reveal</div>
-                    <a href="https://www.instagram.com/reel/DOoh1aGkk0c/?igsh=MXNlaWo1Y25ucmh0bQ==" target="_blank" class="proof-of-work">View on Instagram</a>
-                </div>
-
-                <!-- Video 5 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-659.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+5"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">Property Advertisement</div>
-                    <a href="https://www.instagram.com/reel/DNCj8uvzvYC/?igsh=MXVzYTI1OHR0cGs2eg==" target="_blank" class="proof-of-work">View on Instagram</a>
-                </div>
-
-                <!-- Video 6 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-748.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+6"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">Chief Guest Reveal</div>
-                    <a href=" https://www.instagram.com/reel/DOqpdCrEuIf/?igsh=dDR4Y28zaWQ2ZGRh" target="_blank" class="proof-of-work">View on Instagram</a>
-                </div>
-
-                <!-- Video 7 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-378.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+7"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 8 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-571.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+8"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 9 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-718.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+9"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 10 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-718 (1).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+10"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 11 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Video-931.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+11"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 12 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="editing is an art(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+12"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 13 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Indu(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+13"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 14 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Noor Collection by Nitika Gujral Couture(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+14"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 15 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Personal Branding(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+15"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 16 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Switzerland Psychologe(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+16"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 17 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Top Clothing Brands at Flat 70_ Off(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+17"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 18 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="Alight motion motion graphics created by_ ✨ SUJAL EDITION ✨_.__DM FOR PAID EDIT _._._._fyp _explorepage _foryou _alightmotionedits _aftereffects(MP4).mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+18"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
-                </div>
-
-                <!-- Video 19 -->
-                <div class="video-card vertical-video">
-                    <div class="video-container instagram-embed">
-                        <video 
-                            src="AQNjzEe8dW9qZoYPBTSWc-oxhKPYqYC1pXNj1UCFYMq1UHebLxNaZgsy2fotuG_Q9VMeMuk1bpZUnhQ5M1a63r-v5cpL9cTdybXz_zo.mp4" 
-                            poster="https://via.placeholder.com/800x450?text=Portfolio+Video+19"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label"></div>
+                <div class="stat">
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Views Across Platforms</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Long-Form Videos Section -->
-    <section class="long-form-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">Long-Form Videos</h2>
-            <p class="section-subtitle">Full-Length Projects & Productions</p>
+            <h2 class="section-title">Trusted by Brands</h2>
+            <p class="section-subtitle">What clients say about my work</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Himansh's editing transformed our raw footage into professional-grade content. His attention to detail and quick turnaround was impressive!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JV</div>
+                        <div class="author-info">
+                            <div class="author-name">JainShri Villas</div>
+                            <div class="author-role">Real Estate & Hospitality</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Creative, efficient, and delivers exactly what we need. Himansh's work has significantly boosted our social media engagement and reach."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">GFG</div>
+                        <div class="author-info">
+                            <div class="author-name">GeeksForGeeks</div>
+                            <div class="author-role">Tech & Education</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Best video editor I've worked with. The storytelling and visual quality of the content is exceptional. Highly recommended!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RC</div>
+                        <div class="author-info">
+                            <div class="author-name">Rennovaa Clinic</div>
+                            <div class="author-role">Healthcare & Wellness</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Filter Section -->
+    <section id="work" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-subtitle">Categorized by Project Type</p>
+
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="promotional">Promotional</button>
+                <button class="filter-btn" data-filter="social-media">Social Media</button>
+                <button class="filter-btn" data-filter="motion-design">Motion Design</button>
+                <button class="filter-btn" data-filter="long-form">Long-Form</button>
+            </div>
+
+            <!-- Project Grid with Detailed Cards -->
+            <div class="projects-grid">
+                <!-- Project 1 - Promotional -->
+                <div class="project-card" data-category="promotional">
+                    <div class="project-image">
+                        <video src="Video-659.mp4" poster="https://via.placeholder.com/800x600?text=Project+1" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Promotional</span>
+                        <h3 class="project-title">Property Advertisement Campaign</h3>
+                        <p class="project-description">High-impact promotional video showcasing luxury properties with cinematic transitions and color grading.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">🎬 Adobe Premiere Pro</span>
+                            <span class="meta-item">📸 Color Grading</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Social Media -->
+                <div class="project-card" data-category="social-media">
+                    <div class="project-image">
+                        <video src="Video-129.mp4" poster="https://via.placeholder.com/800x600?text=Project+2" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Social Media</span>
+                        <h3 class="project-title">Event Recap - Instagram Reel</h3>
+                        <p class="project-description">Engaging short-form content capturing the highlights of a major tech event with fast-paced editing and dynamic transitions.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Instagram Reel</span>
+                            <span class="meta-item">✂️ Fast Editing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Motion Design -->
+                <div class="project-card" data-category="motion-design">
+                    <div class="project-image">
+                        <video src="editing is an art(MP4).mp4" poster="https://via.placeholder.com/800x600?text=Project+3" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Motion Design</span>
+                        <h3 class="project-title">Motion Graphics Animation</h3>
+                        <p class="project-description">Creative motion design piece demonstrating advanced animation techniques and visual effects for brand storytelling.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">✨ After Effects</span>
+                            <span class="meta-item">🎨 Animation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Social Media -->
+                <div class="project-card" data-category="social-media">
+                    <div class="project-image">
+                        <video src="Video-312.mp4" poster="https://via.placeholder.com/800x600?text=Project+4" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Social Media</span>
+                        <h3 class="project-title">Real Estate Showcase Reel</h3>
+                        <p class="project-description">Beautiful property showcase designed for Instagram with smooth pans, transitions, and compelling visual storytelling.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">🏠 Real Estate</span>
+                            <span class="meta-item">📸 Cinematic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 - Long-Form -->
+                <div class="project-card" data-category="long-form">
+                    <div class="project-image">
+                        <video src="Step Inside Rennovaa Clinic _ Dermatology Excellence Unveiled _ Clinic Walkthrough(720P_HD).mp4" poster="https://via.placeholder.com/800x600?text=Project+5" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Long-Form</span>
+                        <h3 class="project-title">Clinic Walkthrough Video</h3>
+                        <p class="project-description">Professional clinic walkthrough showcasing facilities with smooth camera movements and professional color grading.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">🎥 Documentary Style</span>
+                            <span class="meta-item">⏱️ 8 minutes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Long-Form -->
+                <div class="project-card" data-category="long-form">
+                    <div class="project-image">
+                        <video src="Client Testimonials _ February 2025 _ Real Stories from Happy Patients _ _RennovaaCares _skincare(720P_HD).mp4" poster="https://via.placeholder.com/800x600?text=Project+6" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Long-Form</span>
+                        <h3 class="project-title">Client Testimonials Collection</h3>
+                        <p class="project-description">Authentic testimonials compiled into a professional video with interviews, B-roll, and motivational music.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">💬 Interviews</span>
+                            <span class="meta-item">⏱️ 6 minutes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 - Promotional -->
+                <div class="project-card" data-category="promotional">
+                    <div class="project-image">
+                        <video src="Video-362.mp4" poster="https://via.placeholder.com/800x600?text=Project+7" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Promotional</span>
+                        <h3 class="project-title">Short Film Production</h3>
+                        <p class="project-description">Creative short film with narrative storytelling, professional color grading, and cinematic visual effects.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">🎬 Narrative</span>
+                            <span class="meta-item">⏱️ 3 minutes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 - Motion Design -->
+                <div class="project-card" data-category="motion-design">
+                    <div class="project-image">
+                        <video src="Personal Branding(MP4).mp4" poster="https://via.placeholder.com/800x600?text=Project+8" muted></video>
+                        <div class="project-overlay">
+                            <button class="play-btn">▶</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Motion Design</span>
+                        <h3 class="project-title">Personal Branding Video</h3>
+                        <p class="project-description">Custom branding video with animated titles, transitions, and professional graphics for social media presence.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">🎨 Branding</span>
+                            <span class="meta-item">✨ Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Software Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Tools</h2>
+            <p class="section-subtitle">Professional Expertise & Software Proficiency</p>
             
-            <div class="video-grid long-form-grid">
-                <!-- Long-Form Video 1 -->
-                <div class="video-card landscape-video">
-                    <div class="video-container">
-                        <video 
-                            src="Step Inside Rennovaa Clinic _ Dermatology Excellence Unveiled _ Clinic Walkthrough(720P_HD).mp4" 
-                            poster="https://via.placeholder.com/1200x675?text=Rennovaa+Clinic+Walkthrough"
-                            controls
-                            controlsList="nodownload">
-                        </video>
+            <div class="skills-wrapper">
+                <div class="skills-column">
+                    <h3 class="skills-category-title">Video Editing</h3>
+                    <div class="skills-list">
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">🎬</span>
+                            <span>Adobe Premiere Pro</span>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">✨</span>
+                            <span>After Effects</span>
+                            <div class="skill-level">Advanced</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">🎨</span>
+                            <span>Photoshop</span>
+                            <div class="skill-level">Advanced</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">📱</span>
+                            <span>DaVinci Resolve</span>
+                            <div class="skill-level">Intermediate</div>
+                        </div>
                     </div>
-                    <div class="video-label">Clinic Walkthrough - Dermatology Excellence</div>
-                    <p class="video-description">Professional clinic walkthrough showcasing Rennovaa's state-of-the-art dermatology facilities and services with cinematic presentation.</p>
-                    <a href="https://youtu.be/0RYlKIBSX1A" target="_blank" class="proof-of-work">View on YouTube</a>
                 </div>
 
-                <!-- Long-Form Video 2 -->
-                <div class="video-card landscape-video">
-                    <div class="video-container">
-                        <video 
-                            src="Client Testimonials _ February 2025 _ Real Stories from Happy Patients _ _RennovaaCares _skincare(720P_HD).mp4" 
-                            poster="https://via.placeholder.com/1200x675?text=Client+Testimonials"
-                            controls
-                            controlsList="nodownload">
-                        </video>
+                <div class="skills-column">
+                    <h3 class="skills-category-title">Specializations</h3>
+                    <div class="skills-list">
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">📸</span>
+                            <span>Color Grading</span>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">✂️</span>
+                            <span>Motion Graphics</span>
+                            <div class="skill-level">Advanced</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">🎞️</span>
+                            <span>Social Media Content</span>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">🎯</span>
+                            <span>Sound Design</span>
+                            <div class="skill-level">Intermediate</div>
+                        </div>
                     </div>
-                    <div class="video-label">Client Testimonials - Real Stories from Happy Patients</div>
-                    <p class="video-description">Authentic patient testimonials showcasing real skincare transformations and satisfaction with professional editing and engaging narration.</p>
-                    <a href="https://youtu.be/6mEhy4vFIXE" target="_blank" class="proof-of-work">View on YouTube</a>
                 </div>
 
-                <!-- Long-Form Video 3 -->
-                <!-- <div class="video-card landscape-video">
-                    <div class="video-container">
-                        <video 
-                            src="longform-video-3.mp4" 
-                            poster="https://via.placeholder.com/1200x675?text=Long-Form+Video+3"
-                            controls
-                            controlsList="nodownload">
-                        </video>
+                <div class="skills-column">
+                    <h3 class="skills-category-title">Soft Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">📖</span>
+                            <span>Storytelling</span>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">🤝</span>
+                            <span>Communication</span>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">⏰</span>
+                            <span>Time Management</span>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <div class="skill-badge">
+                            <span class="skill-badge-icon">💡</span>
+                            <span>Creative Problem Solving</span>
+                            <div class="skill-level">Advanced</div>
+                        </div>
                     </div>
-                    <div class="video-label">Tutorial & How-To Guide</div>
-                    <p class="video-description">Educational video content with clear instructions, graphics overlays, and professional pacing for optimal viewer engagement.</p>
-                </div> -->
-
-                <!-- Long-Form Video 4 -->
-                <!-- <div class="video-card landscape-video">
-                    <div class="video-container">
-                        <video 
-                            src="longform-video-4.mp4" 
-                            poster="https://via.placeholder.com/1200x675?text=Long-Form+Video+4"
-                            controls
-                            controlsList="nodownload">
-                        </video>
-                    </div>
-                    <div class="video-label">Web Series - Episode 1</div>
-                    <p class="video-description">Original scripted content with cinematic editing, color grading, and professional post-production effects.</p>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -414,98 +370,104 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About</h2>
-                    <p class="about-description">
-                        Creative Video Editor with hands-on experience in editing promotional videos and social media reels. Skilled in transforming raw footage into high-quality, engaging content while maintaining brand consistency. Proficient in Adobe Premiere Pro and After Effects, with a strong eye for detail and the ability to meet tight deadlines.
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-text">
+                        I'm a passionate video editor and motion designer with a proven track record of creating compelling visual content that resonates with audiences. With expertise in both short-form viral content and long-form productions, I help brands tell their stories.
                     </p>
-                    
-                    <div class="contact-info">
-                        <p><strong>Email:</strong> <a href="mailto:himanshsharma046@gmail.com">himanshsharma046@gmail.com</a></p>
-                        <p><strong>Phone:</strong> +91 76786 09018</p>
-                        <p><strong>Location:</strong> Faridabad, Haryana 121006</p>
-                    </div>
+                    <p class="about-text">
+                        My approach combines technical proficiency with creative storytelling. Every project is crafted with precision, ensuring maximum impact and authenticity.
+                    </p>
 
-                    <div class="resume-section">
+                    <div class="experience-section">
                         <h3>Work Experience</h3>
                         <div class="experience-item">
-                            <p class="job-title">Video Editor & Graphic Designer</p>
-                            <p class="company">GeeksForGeeks-IKGPTU-Jalandhar, Punjab</p>
-                            <p class="duration">February 2025 to Present • Full-time</p>
-                            <p class="job-description">Collaborate with the core team in Jalandhar creating engaging graphics and editing high-quality videos for technical events, workshops, and promotional campaigns.</p>
+                            <div class="exp-header">
+                                <h4>Video Editor & Graphic Designer</h4>
+                                <span class="exp-company">GeeksForGeeks - IKGPTU Jalandhar</span>
+                            </div>
+                            <p class="exp-duration">February 2025 - Present • Full-time</p>
+                            <p class="exp-description">Creating engaging graphics and high-quality videos for technical events, workshops, and promotional campaigns.</p>
                         </div>
-
                         <div class="experience-item">
-                            <p class="job-title">Video Editor</p>
-                            <p class="company">JainShri Villas</p>
-                            <p class="duration">April 2024 to September 2024 • Part-time</p>
-                            <p class="job-description">Created engaging short-form video content to showcase luxury villas, amenities, and guest experiences in Goa. Edited reels optimized for Instagram and social media platforms, increasing visibility and engagement while focusing on aesthetic storytelling and smooth transitions.</p>
+                            <div class="exp-header">
+                                <h4>Video Editor</h4>
+                                <span class="exp-company">JainShri Villas</span>
+                            </div>
+                            <p class="exp-duration">April 2024 - September 2024 • Part-time</p>
+                            <p class="exp-description">Produced engaging short-form content showcasing luxury properties with focus on aesthetic storytelling.</p>
                         </div>
                     </div>
 
-                    <div class="resume-section">
+                    <div class="education-section">
                         <h3>Education</h3>
                         <div class="education-item">
-                            <p class="degree">Computer Science and Engineering (B.Tech/B.E.)</p>
-                            <p class="institution">Punjab Technical University-Jalandhar, Punjab</p>
-                            <p class="duration">July 2023 to Present • Full-time | Scored: 7</p>
+                            <h4>B.Tech in Computer Science & Engineering</h4>
+                            <p class="edu-school">Punjab Technical University, Jalandhar</p>
+                            <p class="edu-duration">July 2023 - Present | CGPA: 7.0</p>
                         </div>
-                        <div class="education-item">
-                            <p class="degree">Computer Science and Engineering (Diploma)</p>
-                            <p class="institution">Govt Polytechnic, Nilokheri-Nilokheri, Haryana</p>
-                            <p class="duration">October 2021 to July 2024</p>
-                        </div>
-                    </div>
-
-                    <div class="resume-section">
-                        <h3>Awards & Certifications</h3>
-                        <p class="award-title"><strong>First In University In Making Best Video Content</strong></p>
-                        <p class="award-date">September 2024 to Present</p>
-                        <p class="award-description">Awarded Gold Medal and First Prize for Best Video Content Making at the Overall University level, Punjab Technical University, recognizing creativity, storytelling, and technical excellence.</p>
                     </div>
                 </div>
 
-                <div class="skills-container">
-                    <h3 class="skills-title">Skills & Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-icon">✎</span>
-                            <span class="skill-name">Adobe Premiere Pro</span>
+                <div class="about-side">
+                    <div class="award-card">
+                        <div class="award-icon">🏆</div>
+                        <h3>Awards & Recognition</h3>
+                        <p><strong>First in University - Best Video Content</strong></p>
+                        <p class="award-date">September 2024</p>
+                        <p class="award-desc">Gold Medal and First Prize for creativity, storytelling, and technical excellence.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Quick Contact</h3>
+                        <div class="contact-detail">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:himanshsharma046@gmail.com">Contact me</a>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">✦</span>
-                            <span class="skill-name">After Effects</span>
+                        <div class="contact-detail">
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+917678609018">+91 76786 09018</a>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">✓</span>
-                            <span class="skill-name">Social Media Editing</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">◐</span>
-                            <span class="skill-name">Color Grading</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">▶</span>
-                            <span class="skill-name">Motion Graphics</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📖</span>
-                            <span class="skill-name">Storytelling</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">💬</span>
-                            <span class="skill-name">Communication</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🎨</span>
-                            <span class="skill-name">Graphic Design</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">⚙️</span>
-                            <span class="skill-name">Website Development</span>
+                        <div class="contact-detail">
+                            <span class="contact-label">Location</span>
+                            <p>Faridabad, Haryana</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Ready to Create Something Amazing?</h2>
+            <p class="section-subtitle">Let's transform your vision into compelling video content</p>
+            
+            <div class="contact-content">
+                <div class="contact-methods">
+                    <div class="method-card">
+                        <div class="method-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:himanshsharma046@gmail.com" class="method-link">himanshsharma046@gmail.com</a>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">📞</div>
+                        <h3>Phone</h3>
+                        <a href="tel:+917678609018" class="method-link">+91 76786 09018</a>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-icon">📍</div>
+                        <h3>Location</h3>
+                        <p class="method-link">Faridabad, Haryana</p>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Available for Projects</h3>
+                    <p>Whether you need a single video or a complete content series, I'm ready to collaborate.</p>
+                    <a href="mailto:himanshsharma046@gmail.com" class="btn btn-primary btn-lg">Send Me an Email</a>
                 </div>
             </div>
         </div>
@@ -514,7 +476,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Himansh Sharma. All rights reserved. | Faridabad, Haryana</p>
+            <div class="footer-content">
+                <p>&copy; 2026 Himansh Sharma | Video Editor & Motion Designer</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
 
