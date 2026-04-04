@@ -86,24 +86,101 @@ if (filterBtns && filterBtns.length > 0) {
 }
 
 /* ============================================
-   PLAY BUTTON FUNCTIONALITY
+   STAT COUNTER ANIMATION
    ============================================ */
 
+const animateCounters = () => {
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    
+    statNumbers.forEach(element => {
+        const finalCount = parseInt(element.getAttribute('data-count'));
+        let currentCount = 0;
+        const duration = 2000; // 2 seconds
+        const increment = finalCount / (duration / 16); // 60fps
+        const startTime = Date.now();
+        
+        const updateCount = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            currentCount = Math.floor(finalCount * progress);
+            element.textContent = currentCount + '+';
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                element.textContent = finalCount + '+';
+            }
+        };
+        
+        // Use Intersection Observer to trigger when stats section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && currentCount === 0) {
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        observer.observe(element);
+    });
+};
+
+// Initialize counter animation
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateCounters);
+} else {
+    animateCounters();
+}
+
+/* ============================================
+   PLAY BUTTON FUNCTIONALITY - VIDEO MODAL
+   ============================================ */
+
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const videoModalClose = document.getElementById('videoModalClose');
+
+// Open modal when play button is clicked
 playBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const video = btn.closest('.project-image').querySelector('video');
+        e.stopPropagation();
         
-        if (video) {
-            if (video.paused) {
-                video.play();
-                btn.style.opacity = '0';
-            } else {
-                video.pause();
-                btn.style.opacity = '1';
-            }
+        const videoElement = btn.closest('.project-image').querySelector('video');
+        if (videoElement && videoElement.src) {
+            modalVideo.src = videoElement.src;
+            modalVideo.load(); // Ensure video is loaded
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Don't auto-play - let user control playback
         }
-    });
+    });  
+});
+
+// Close modal functions
+const closeVideoModal = () => {
+    videoModal.classList.remove('active');
+    modalVideo.pause();
+    modalVideo.src = '';
+    document.body.style.overflow = '';
+};
+
+videoModalClose.addEventListener('click', closeVideoModal);
+
+// Close modal when clicking outside the video
+videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+        closeVideoModal();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+        closeVideoModal();
+    }
 });
 
 /* ============================================
@@ -112,27 +189,11 @@ playBtns.forEach(btn => {
 
 projectCards.forEach(card => {
     const video = card.querySelector('video');
-    const playBtn = card.querySelector('.play-btn');
     
-    if (video && playBtn) {
-        // Hide play button when video plays
-        video.addEventListener('play', () => {
-            playBtn.style.opacity = '0';
-            playBtn.style.pointerEvents = 'none';
-        });
-        
-        // Show play button when video pauses
-        video.addEventListener('pause', () => {
-            playBtn.style.opacity = '1';
-            playBtn.style.pointerEvents = 'auto';
-        });
-        
-        // Reset play button on video end
-        video.addEventListener('ended', () => {
-            playBtn.style.opacity = '1';
-            playBtn.style.pointerEvents = 'auto';
-            video.currentTime = 0;
-        });
+    if (video) {
+        // Ensure videos don't autoplay
+        video.autoplay = false;
+        video.pause();
     }
 });
 
@@ -313,22 +374,20 @@ window.addEventListener('load', () => {
    PERFORMANCE OPTIMIZATIONS
    ============================================ */
 
-// Lazy load videos
+// Lazy load videos - pause when out of view, but don't auto-play
 const videos = document.querySelectorAll('video');
 if ('IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.play().catch(err => {
-                    console.log('Video autoplay prevented:', err);
-                });
-            } else {
+            if (!entry.isIntersecting) {
                 entry.target.pause();
             }
+            // Videos stay paused - user controls playback
         });
-    });
+    }, { threshold: 0.5 });
     
     videos.forEach(video => {
+        video.pause(); // Explicitly pause all videos on load
         videoObserver.observe(video);
     });
 }
