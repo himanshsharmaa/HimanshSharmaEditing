@@ -531,6 +531,7 @@ a {
     border-color: var(--accent-primary);
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-fast);
 }
 
 .stat:hover::before {
