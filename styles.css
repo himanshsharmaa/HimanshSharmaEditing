@@ -677,10 +677,59 @@ a {
     width: 100%;
     max-width: 450px;
     aspect-ratio: 3/4;
-    transition: all var(--transition-smooth);
+    z-index: 1;
 }
 
-.profile-image-frame:hover {
+/* THE SMOKEY BLOB */
+.profile-image-frame::before {
+    content: '';
+    position: absolute;
+    /* Shifted slightly left (45%) to match the heavy leftward glow in your image */
+    top: 50%;
+    left: 45%; 
+    transform: translate(-50%, -50%);
+    
+    /* Crucial: Must be much wider than the photo so the light can stretch out */
+    width: 180%; 
+    height: 130%;
+    z-index: -1;
+    
+    /* Elliptical gradient creates the stretched horizontal look */
+    background: radial-gradient(
+        ellipse at center, 
+        rgba(79, 70, 229, 0.8) 0%,   /* Strong core */
+        rgba(79, 70, 229, 0.3) 45%,  /* Mid fade */
+        transparent 75%              /* Fades to nothing to prevent borders */
+    );
+    
+    /* MASSIVE blur is the secret to killing all sharp lines */
+    filter: blur(120px); 
+    
+    /* Asymmetrical shape to create the organic "leak" */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    
+    /* Slow, subtle breathing animation */
+    animation: morph-blob 12s ease-in-out infinite alternate;
+    
+    /* Failsafes to ensure no lines ever appear */
+    border: none;
+    box-shadow: none;
+    pointer-events: none; 
+}
+
+@keyframes morph-blob {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        border-radius: 40% 60% 70% 30% / 40% 60% 30% 70%;
+        transform: translate(-52%, -48%) scale(1.05); /* Slight shifting */
+    }
+    100% {
+        border-radius: 70% 30% 40% 60% / 50% 40% 60% 50%;
+        transform: translate(-48%, -52%) scale(0.95);
+    }
 }
 
 .profile-image {
@@ -689,14 +738,20 @@ a {
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: filter var(--transition-smooth);
-    border-radius: 20px;
+    /* Keeps your photo corners rounded, but softens them into the smoke */
+    border-radius: 30px; 
+    transition: transform 0.4s ease;
+}
+
+/* Subtle Hover Effect */
+.profile-image-frame:hover::before {
+    opacity: 1;
+    filter: blur(140px); /* Increases the smokey spread on hover */
+    width: 190%;
 }
 
 .profile-image-frame:hover .profile-image {
-    filter: drop-shadow(0 0 20px rgba(79, 70, 229, 0.6)) 
-            drop-shadow(0 0 40px rgba(79, 70, 229, 0.4))
-            drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    transform: scale(1.02);
 }
 
 .profile-glow {
