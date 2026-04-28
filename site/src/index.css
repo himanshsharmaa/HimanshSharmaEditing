@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --header-height: 88px;
+}
+
+html,body,#root{
+  height:100%;
+}
+
+/* Smooth anchor scrolling and offset for fixed header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+#main {
+  padding-top: var(--header-height);
+}
+
+body{
+  @apply bg-[var(--bg)] text-[var(--text)] antialiased;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.container{
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Minimal visual refinement for hero spacing and editorial heading */
+.hero-heading {
+  line-height: 1.03;
+  font-family: 'Playfair Display', 'Poppins', Georgia, serif;
+  font-weight: 700;
+}
+
+/* Accessible focus styles */
+a:focus-visible, button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(212,175,55,0.12);
+  border-radius: 6px;
+}
+
+/* Slightly tighter hero heading on large screens */
+@media (min-width: 1024px) {
+  .hero-heading { letter-spacing: -0.01em }
+}
+
+/* Glassmorphism sections */
+.glass-section {
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+}
+.glass-alt {
+  background: rgba(255,255,255,0.01);
+  border-top: 1px solid rgba(255,255,255,0.02);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 6px;
+}
+
+.section-sep {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(212,175,55,0.06), rgba(255,255,255,0.02));
+  margin: 3rem 0;
+}
+
+/* Skip link (visually hidden until focused) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  z-index: 60;
+}
+
+/* Mobile nav / hamburger tweaks */
+.hamburger {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger span { transition: none !important }
+}
+
+/* Form element tweaks for better contrast */
+input, textarea {
+  background: transparent;
+  border: 1px solid rgba(148,163,184,0.12);
+}
+
+/* Hero background grid */
+.hero-grid {
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px;
+}
+
+/* white oval under illustration */
+.hero-oval {
+  width: 320px;
+  height: 72px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 9999px;
+  transform: translateY(10%);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+}
+@media (min-width: 1024px) {
+  .hero-oval { width: 360px; height: 88px; }
+}
+

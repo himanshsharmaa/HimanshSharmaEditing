@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <rect width="240" height="240" rx="24" fill="#0a0a0a" />
+  <circle cx="120" cy="88" r="40" fill="#d4af37" />
+  <rect x="40" y="140" width="160" height="40" rx="6" fill="#1f1f1f" />
+  <text x="50%" y="170" dominant-baseline="middle" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#fff">Himansh Sharma</text>
+</svg>
