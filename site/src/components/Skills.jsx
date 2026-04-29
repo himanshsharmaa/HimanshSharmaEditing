@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import software from '../data/software'
 
 const skillsList = [
   'Video Editing',
@@ -10,17 +11,6 @@ const skillsList = [
   'Cinematography',
   'Compression & Encoding',
   'Social Media Optimization'
-]
-
-const software = [
-  { id: 1, name: 'Adobe Premiere Pro', icon: '/assets/icons/premiere-pro.png', color: '#6C3EA3', years: 6 },
-  { id: 2, name: 'After Effects', icon: '/assets/icons/after-effects.png', color: '#4F2A85', years: 6 },
-  { id: 3, name: 'DaVinci Resolve', icon: '/assets/icons/davinci.png', color: '#00A3A3', years: 4 },
-  { id: 4, name: 'Adobe Photoshop', icon: '/assets/icons/photoshop.png', color: '#001E36', years: 7 },
-  { id: 5, name: 'Lightroom', icon: '/assets/icons/photoshop-lightroom.png', color: '#31A8FF', years: 5 },
-  { id: 6, name: 'Adobe Audition', icon: '/assets/icons/audition.png', color: '#4A8A3B', years: 4 },
-  { id: 7, name: 'FFmpeg', icon: '/assets/icons/ffmpeg.png', color: '#F05A28', years: 8 },
-  { id: 8, name: 'Final Cut Pro', icon: '/assets/icons/final-cut.png', color: '#0A84FF', years: 3 }
 ]
 
 export default function Skills(){
@@ -45,9 +35,11 @@ export default function Skills(){
 
           <div className="md:col-span-2">
             <h3 className="text-sm font-medium text-gray-200">Software</h3>
-            <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="mt-4 flex gap-4 overflow-x-auto snap-x sm:grid sm:grid-cols-4 sm:gap-4 sm:overflow-visible">
               {software.map(s => (
-                <SoftwareTile key={s.id} s={s} />
+                <div className="min-w-[9rem] snap-start" key={s.id}>
+                  <SoftwareTile key={s.id} s={s} />
+                </div>
               ))}
             </div>
           </div>
@@ -65,9 +57,52 @@ function getInitials(name){
   return (parts[0][0] + parts[1][0]).toUpperCase();
 }
 
+function pickTextColor(hex){
+  if(!hex) return '#ffffff'
+  let h = hex.replace('#','')
+  if(h.length === 3) h = h.split('').map(c=>c+c).join('')
+  const bigint = parseInt(h, 16)
+  const r = (bigint >> 16) & 255
+  const g = (bigint >> 8) & 255
+  const b = bigint & 255
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
+  return luminance > 0.55 ? '#000000' : '#ffffff'
+}
+
+function getLevel(years){
+  if(years >= 6) return 'Expert'
+  if(years >= 3) return 'Proficient'
+  return 'Familiar'
+}
+
 function SoftwareTile({s}){
-  const [imgError, setImgError] = React.useState(false);
-  const initials = getInitials(s.name);
+  const [srcIndex, setSrcIndex] = React.useState(0)
+  const sources = [s.iconSvg, s.icon].filter(Boolean)
+  const imgSrc = sources[srcIndex]
+  const label = s.abbr ? s.abbr : getInitials(s.name)
+  const textColor = pickTextColor(s.color)
+  const micro = `${s.years} yrs — ${getLevel(s.years)}`
+  const descId = `software-desc-${s.id}`
+
+  function emitAnalytics(action){
+    const payload = { id: s.id, name: s.name, abbr: s.abbr, action, years: s.years, ts: Date.now() }
+    try{ if(window.dataLayer && Array.isArray(window.dataLayer)) window.dataLayer.push({ event: 'software_interaction', ...payload }) }catch(e){}
+    try{ window.dispatchEvent(new CustomEvent('software-interaction',{detail: payload})) }catch(e){}
+    if(typeof window !== 'undefined' && window.__DEV__) console.log('analytics', payload)
+  }
+
+  function onImgError(){
+    if(srcIndex + 1 < sources.length) setSrcIndex(i => i + 1)
+    else setSrcIndex(sources.length)
+  }
+
+  function handleKey(e){
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault()
+      emitAnalytics('activate')
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -75,20 +110,26 @@ function SoftwareTile({s}){
       whileHover={{ y: -6, scale: 1.02 }}
       viewport={{ once: true }}
       transition={{ type: 'spring', stiffness: 200, damping: 18 }}
-      className="flex flex-col items-center gap-2 text-center p-3 hover:bg-white/5 focus:outline-none rounded"
-      role="img"
+      className="flex flex-col items-center gap-2 text-center p-3 hover:bg-white/5 focus:outline-none rounded ring-1 ring-white/5 shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2"
+      role="button"
+      data-analytics={`software:${s.id}`}
       aria-label={s.name}
+      aria-describedby={descId}
+      title={`${s.name} — ${micro}`}
       tabIndex={0}
+      onMouseEnter={()=>emitAnalytics('hover')}
+      onClick={()=>emitAnalytics('click')}
+      onKeyDown={handleKey}
     >
       <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{backgroundColor: s.color}}>
-        {!imgError ? (
-          <img src={s.icon} alt={s.name} className="w-7 h-7 object-contain" onError={(e)=>{ e.currentTarget.onerror = null; setImgError(true); }} />
+        {imgSrc && srcIndex < sources.length ? (
+          <img src={imgSrc} alt={s.name} className="w-7 h-7 object-contain" onError={onImgError} />
         ) : (
-          <span className="text-white text-sm font-semibold">{initials}</span>
+          <span className="text-sm font-semibold" style={{color: textColor}}>{label}</span>
         )}
       </div>
       <div className="text-sm text-gray-200">{s.name}</div>
-      <div className="text-xs text-gray-400">{s.years} yrs</div>
+      <div id={descId} className="text-xs text-gray-400">{micro}</div>
     </motion.div>
   )
 }
