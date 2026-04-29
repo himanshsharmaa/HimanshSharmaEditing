@@ -9,15 +9,6 @@ export default function Hero(){
       <div className="container min-h-[72vh] flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center">
           <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-4 mb-4">
-              <img
-                src="/assets/profile/profile.png"
-                onError={(e) => { e.target.onerror = null; e.target.src = '/assets/profile/profile.svg' }}
-                alt="Himansh Sharma"
-                className="w-16 h-16 rounded-full object-cover hidden sm:block"
-              />
-              <p className="text-sm text-gray-300">Himansh Sharma</p>
-            </div>
 
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
