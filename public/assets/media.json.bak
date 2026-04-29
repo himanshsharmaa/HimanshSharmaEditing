@@ -1,0 +1,204 @@
+{
+  "profile": "profile.png",
+  "projects": [
+    {
+      "id": 1,
+      "title": "Luxury Villa Ad",
+      "desc": "Cinematic lifestyle video designed to increase bookings and elevate brand perception",
+      "video": "Video-659.mp4",
+      "poster": "Video-659.webp",
+      "client": "JainShri Villas",
+      "year": 2024,
+      "tags": [
+        "Brand Film",
+        "Cinematic"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Luxury Villa Ad",
+      "desc": "Fast-paced social edit built to maximize watch time and shares",
+      "video": "Video-312.mp4",
+      "poster": "Video-312.webp",
+      "client": "JainShri Villas",
+      "year": 2023,
+      "tags": [
+        "Social",
+        "Reel"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Clinic Walkthrough",
+      "desc": "Cinematic walkthrough emphasizing trust and premium service",
+      "video": "Step Inside Rennovaa Clinic _ Dermatology Excellence Unveiled _ Clinic Walkthrough(720P_HD).mp4",
+      "poster": "Step Inside Rennovaa Clinic _ Dermatology Excellence Unveiled _ Clinic Walkthrough(720P_HD).webp",
+      "client": "Rennovaa Clinic",
+      "year": 2022,
+      "tags": [
+        "Walkthrough",
+        "Commercial"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Event Highlights",
+      "desc": "Fast-paced tech event highlight edit built to maximize watch time and shares",
+      "video": "Video-129.mp4",
+      "poster": "Video-129.webp",
+      "tags": [
+        "Reel"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Video 362",
+      "desc": "Imported from project assets",
+      "video": "Video-362.mp4",
+      "poster": "Video-362.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Video 378",
+      "desc": "Imported from project assets",
+      "video": "Video-378.mp4",
+      "poster": "Video-378.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Video 397",
+      "desc": "Imported from project assets",
+      "video": "Video-397.mp4",
+      "poster": "Video-397.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Video 571",
+      "desc": "Imported from project assets",
+      "video": "Video-571.mp4",
+      "poster": "Video-571.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Video 718",
+      "desc": "Imported from project assets",
+      "video": "Video-718.mp4",
+      "poster": "Video-718.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Video 748",
+      "desc": "Imported from project assets",
+      "video": "Video-748.mp4",
+      "poster": "Video-748.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Video 931",
+      "desc": "Imported from project assets",
+      "video": "Video-931.mp4",
+      "poster": "Video-931.webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Top Clothing Brands — Promo",
+      "desc": "Promo edit for retail",
+      "video": "Top Clothing Brands at Flat 70_ Off(MP4).mp4",
+      "poster": "Top Clothing Brands at Flat 70_ Off(MP4).webp",
+      "tags": [
+        "Promo"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Personal Branding",
+      "desc": "Personal branding edit",
+      "video": "Personal Branding(MP4).mp4",
+      "poster": "Personal Branding(MP4).webp",
+      "tags": [
+        "Branding"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Noor Collection by Nitika Gujral Couture",
+      "desc": "Fashion edit",
+      "video": "Noor Collection by Nitika Gujral Couture(MP4).mp4",
+      "poster": "Noor Collection by Nitika Gujral Couture(MP4).webp",
+      "tags": [
+        "Fashion"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Indu",
+      "desc": "Imported from project assets",
+      "video": "Indu(MP4).mp4",
+      "poster": "Indu(MP4).webp",
+      "tags": [
+        "Imported"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Editing Is An Art",
+      "desc": "Creative edit",
+      "video": "editing is an art(MP4).mp4",
+      "poster": "editing is an art(MP4).webp",
+      "tags": [
+        "Creative"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Client Testimonials — RennovaaCares",
+      "desc": "Client testimonials compilation",
+      "video": "Client Testimonials _ February 2025 _ Real Stories from Happy Patients _ _RennovaaCares _skincare(720P_HD).mp4",
+      "poster": "Client Testimonials _ February 2025 _ Real Stories from Happy Patients _ _RennovaaCares _skincare(720P_HD).webp",
+      "tags": [
+        "Testimonial"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Social Clip AQN...",
+      "desc": "Short social clip",
+      "video": "AQNjzEe8dW9qZoYPBTSWc-oxhKPYqYC1pXNj1UCFYMq1UHebLxNaZgsy2fotuG_Q9VMeMuk1bpZUnhQ5M1a63r-v5cpL9cTdybXz_zo.mp4",
+      "poster": "AQNjzEe8dW9qZoYPBTSWc-oxhKPYqYC1pXNj1UCFYMq1UHebLxNaZgsy2fotuG_Q9VMeMuk1bpZUnhQ5M1a63r-v5cpL9cTdybXz_zo.webp",
+      "tags": [
+        "Social"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "AlightMotion — SUJAL EDITION",
+      "desc": "Alight motion graphics",
+      "video": "Alight motion motion graphics created by_ ✨ SUJAL EDITION ✨_.__DM FOR PAID EDIT _._._._fyp _explorepage _foryou _alightmotionedits _aftereffects(MP4).mp4",
+      "poster": "Alight motion motion graphics created by_ ✨ SUJAL EDITION ✨_.__DM FOR PAID EDIT _._._._fyp _explorepage _foryou _alightmotionedits _aftereffects(MP4).webp",
+      "tags": [
+        "Motion Graphics"
+      ]
+    }
+  ]
+}
