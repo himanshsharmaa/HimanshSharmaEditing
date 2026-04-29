@@ -31,8 +31,8 @@ jobs:
       - name: Deploy to Vercel via CLI
         run: |
           cd site || exit 0
-          # install vercel cli and deploy
+          # install vercel cli and deploy to specific project
           npm install --no-audit --no-fund vercel@latest
-          npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm
+          npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm --project prj_Ib9wVMWl6ucFNzwyHzktDIYPAV7o
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
