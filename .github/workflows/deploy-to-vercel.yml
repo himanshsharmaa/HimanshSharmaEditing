@@ -28,11 +28,11 @@ jobs:
           cd site || exit 0
           npm run build
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod'
-          working-directory: site
+      - name: Deploy to Vercel via CLI
+        run: |
+          cd site || exit 0
+          # install vercel cli and deploy
+          npm install --no-audit --no-fund vercel@latest
+          npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
