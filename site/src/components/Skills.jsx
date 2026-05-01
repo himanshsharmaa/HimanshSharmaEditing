@@ -35,13 +35,40 @@ export default function Skills(){
 
           <div className="md:col-span-2">
             <h3 className="text-sm font-medium text-gray-200">Software</h3>
-            <div className="mt-4 flex gap-4 overflow-x-auto snap-x sm:grid sm:grid-cols-4 sm:gap-4 sm:overflow-visible">
-              {software.map(s => (
-                <div className="min-w-[9rem] snap-start" key={s.id}>
-                  <SoftwareTile key={s.id} s={s} />
-                </div>
+            <motion.div 
+              className="mt-4 flex gap-4 overflow-x-auto snap-x sm:grid sm:grid-cols-4 sm:gap-4 sm:overflow-visible"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.06,
+                    delayChildren: 0.05
+                  }
+                }
+              }}
+            >
+              {software.map((s, idx) => (
+                <motion.div 
+                  className="min-w-[9rem] snap-start" 
+                  key={s.id}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: {
+                      opacity: 1,
+                      scale: 1,
+                      transition: { duration: 0.4, ease: 'easeOut' }
+                    }
+                  }}
+                  whileHover={{ y: -6 }}
+                >
+                  <SoftwareTile s={s} />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -78,6 +105,19 @@ function getLevel(years){
 function SoftwareTile({s}){
   const [srcIndex, setSrcIndex] = React.useState(0)
   const sources = [s.iconSvg, s.icon].filter(Boolean)
+  
+  const tileVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4, ease: 'easeOut' }
+    },
+    hover: {
+      y: -6,
+      transition: { duration: 0.2 }
+    }
+  }
   const imgSrc = sources[srcIndex]
   const label = s.abbr ? s.abbr : getInitials(s.name)
   const textColor = pickTextColor(s.color)

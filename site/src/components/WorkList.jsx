@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react'
+import { motion } from 'framer-motion'
 
 const defaultProjects = [
   {
@@ -187,11 +188,17 @@ export default function WorkList({ onPlay }) {
   return (
     <section id="work" className="container py-16 glass-section">
       <div className="max-w-content">
-        <h2 className="text-2xl font-semibold">Selected Work</h2>
+        <motion.h2 initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-2xl font-semibold">Selected Work</motion.h2>
 
           <div className="mt-6">
           <div className="flex items-center justify-between gap-4">
-            <div className="flex flex-wrap gap-3">
+            <motion.div 
+              className="flex flex-wrap gap-3"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
               {tags.map(tag => (
                 <button
                   key={tag}
@@ -202,20 +209,37 @@ export default function WorkList({ onPlay }) {
                   {tag}
                 </button>
               ))}
-            </div>
+            </motion.div>
 
             <div className="flex items-center gap-3">
               <span className="text-sm text-gray-400">Showing {visibleProjects.length} / {projects.length}</span>
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visibleProjects.map((p) => {
+          <motion.div 
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{
+              staggerChildren: 0.05,
+              delayChildren: 0.1
+            }}
+          >
+            {visibleProjects.map((p, idx) => {
               const posterSrc = resolveAsset(p.poster, 'posters') || '/assets/posters/poster-1.svg'
               const videoSrc = resolveAsset(p.video, 'videos')
               const hasVideo = !!videoSrc
               return (
-                <article key={p.id} className="relative rounded overflow-hidden bg-black/60 group">
+                <motion.article 
+                  key={p.id} 
+                  className="relative rounded overflow-hidden bg-black/60 group"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                >
                   {hasVideo ? (
                     <video
                       ref={(el) => { refs.current[p.id] = el }}
@@ -364,10 +388,10 @@ export default function WorkList({ onPlay }) {
                       </video>
                     </div>
                   )}
-                </article>
+                </motion.article>
               )
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
