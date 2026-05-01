@@ -4,8 +4,6 @@ const base = [
   { id: 3, name: 'DaVinci Resolve', icon: '/assets/icons/davinci.png', color: '#00A3A3', years: 1, abbr: 'DR' },
   { id: 4, name: 'Adobe Photoshop', icon: '/assets/icons/photoshop.png', color: '#001E36', years: 2, abbr: 'Ps' },
   { id: 5, name: 'Lightroom', icon: '/assets/icons/photoshop-lightroom.png', color: '#31A8FF', years: 3, abbr: 'Lr' },
-  { id: 6, name: 'FFmpeg', icon: '/assets/icons/ffmpeg.png', color: '#F05A28', years: 8, abbr: 'FF' },
-  { id: 7, name: 'Final Cut Pro', icon: '/assets/icons/final-cut.png', color: '#0A84FF', years: 3, abbr: 'FC' },
   { id: 8, name: 'CapCut', icon: '/assets/icons/capcut.png', color: '#00AEEF', years: 2, abbr: 'CC' },
   { id: 9, name: 'AI Tools', icon: '/assets/icons/ai.png', color: '#8E5CFF', years: 1, abbr: 'AI' }
 ]

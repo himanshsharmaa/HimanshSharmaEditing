@@ -49,7 +49,7 @@ export default function Hero(){
           </div>
 
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 lg:w-[380px] lg:h-[380px]">
+            <div className="relative w-80 h-80 lg:w-[420px] lg:h-[420px]">
               <motion.div
                 aria-hidden="true"
                 initial={{ scale: 1, opacity: 0.6 }}
@@ -58,13 +58,16 @@ export default function Hero(){
                 className="absolute inset-0 rounded-xl pointer-events-none"
                 style={{ background: 'radial-gradient(circle at 30% 20%, rgba(99,102,241,0.18), rgba(236,72,153,0.12), rgba(249,115,22,0.09))', filter: 'blur(28px)', zIndex: -1 }}
               />
-              <div className="absolute inset-x-0 -bottom-6 flex justify-center">
-                <div className="hero-oval"></div>
-              </div>
               <img
                 src="/assets/profile/profile.png"
                 alt="Illustration"
-                className="relative w-full h-full object-cover rounded-xl shadow-2xl"
+                className="relative w-full h-full object-cover rounded-xl shadow-2xl hero-img-mask"
+                style={{
+                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
+                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
+                  WebkitMaskSize: '100% 100%',
+                  maskSize: '100% 100%',
+                }}
                 onError={(e)=>{e.target.onerror=null; e.target.src='/assets/posters/Video-659.webp'}}
               />
             </div>
