@@ -65,6 +65,7 @@ export default function Hero(){
               <img
                 src="/assets/profile/profile.png"
                 alt="Illustration"
+                fetchpriority="high"
                 className="relative w-full h-full object-cover rounded-xl shadow-2xl hero-img-mask"
                 style={{
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
