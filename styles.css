@@ -743,7 +743,8 @@ a {
 .profile-image-frame {
     position: relative;
     width: 100%;
-    max-width: 450px;
+    /* Slightly larger on desktop for more presence */
+    max-width: 520px;
     aspect-ratio: 3/4;
     z-index: 1;
 }
@@ -807,19 +808,36 @@ a {
     object-position: center;
     display: block;
     /* Keeps your photo corners rounded, but softens them into the smoke */
-    border-radius: 30px;
+    border-radius: 28px;
     position: relative;
+    z-index: 2; /* sit above subtle frame effects */
+
+    /* Smooth dissolve into the background: use a mask so the bottom becomes transparent */
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
+    mask-image: linear-gradient(to top, transparent 0%, black 35%);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    /* gentle lift so image feels slightly elevated */
+    transform: translateY(-2%);
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
 }
 
-.profile-image::after {
+/* Add a subtle blurred band under the image to smooth the transition further */
+.profile-image-frame::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
-    border-radius: 0 0 30px 30px;
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.6) 100%);
+    filter: blur(36px) saturate(1.05);
+    border-radius: 50%;
+    z-index: 1; /* below the image but above the blob */
     pointer-events: none;
 }
 
@@ -921,13 +939,13 @@ a {
     }
 
     .profile-image-frame {
-        max-width: 320px;
+        max-width: 360px;
         aspect-ratio: 3/4;
     }
 
     .profile-glow {
-        width: 120px;
-        height: 120px;
+        width: 160px;
+        height: 160px;
     }
 
     .play-btn-large {
