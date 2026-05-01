@@ -33,9 +33,13 @@ export default function Layout({ children }){
               src="/assets/profile/profile.png"
               onError={(e) => { e.target.onerror = null; e.target.src = '/assets/profile/profile.svg' }}
               alt="Himansh Sharma"
+              width={40}
+              height={40}
               className="hidden sm:block w-10 h-10 rounded-full object-cover"
+              loading="eager"
+              decoding="async"
             />
-            <a href="#" className="text-xl font-display font-bold">Himansh Sharma</a>
+            <a href="#main" className="text-xl font-display font-bold">Himansh Sharma</a>
           </div>
 
           <nav className="hidden md:flex gap-6 items-center text-sm text-gray-300 " aria-label="Primary navigation">

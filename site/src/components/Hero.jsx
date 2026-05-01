@@ -66,6 +66,8 @@ export default function Hero(){
                 src="/assets/profile/profile.png"
                 alt="Illustration"
                 fetchpriority="high"
+                width={420}
+                height={420}
                 className="relative w-full h-full object-cover rounded-xl shadow-2xl hero-img-mask"
                 style={{
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
@@ -73,7 +75,7 @@ export default function Hero(){
                   WebkitMaskSize: '100% 100%',
                   maskSize: '100% 100%',
                 }}
-                onError={(e)=>{e.target.onerror=null; e.target.src='/assets/posters/Video-659.webp'}}
+                onError={(e)=>{e.target.onerror=null; e.target.src='/assets/profile/profile.svg'}}
               />
             </div>
           </div>

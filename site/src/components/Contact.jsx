@@ -6,17 +6,34 @@ export default function Contact(){
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState('')
 
+  // read endpoint from environment (Vite: VITE_CONTACT_ENDPOINT)
+  const FORM_ENDPOINT = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_CONTACT_ENDPOINT) || 'https://formspree.io/f/your-form-id'
+
   async function handleSubmit(e){
     e.preventDefault()
+    // basic client-side validation
+    if (!name || name.length < 2) return setStatus('Please enter your name')
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email || !emailRe.test(email)) return setStatus('Please enter a valid email')
+    if (!message || message.length < 10) return setStatus('Please include a short message')
+
     setStatus('pending')
-    // Replace with your Formspree endpoint or server endpoint
-    const endpoint = 'https://formspree.io/f/your-form-id'
+    const endpoint = FORM_ENDPOINT
 
     try {
       const formData = new FormData()
       formData.append('name', name)
       formData.append('email', email)
       formData.append('message', message)
+      // include honeypot field for Netlify/Formspree
+      formData.append('bot-field', '')
+
+      // if endpoint still the placeholder, fallback to mailto to avoid lost messages
+      if (endpoint.includes('your-form-id')) {
+        window.location.href = `mailto:${encodeURIComponent(email || 'hello@example.com')}?subject=${encodeURIComponent('Website contact')}&body=${encodeURIComponent(`Name: ${name}\n\n${message}`)}`
+        setStatus('fallback-mailto')
+        return
+      }
 
       const res = await fetch(endpoint, {
         method: 'POST',
@@ -31,8 +48,6 @@ export default function Contact(){
         setMessage('')
       } else {
         setStatus('error')
-        // fallback: open mail client
-        window.location.href = `mailto:${encodeURIComponent(email || 'hello@example.com')}?subject=${encodeURIComponent('Website contact')}&body=${encodeURIComponent(message || '')}`
       }
     } catch (err) {
       setStatus('error')
@@ -50,22 +65,22 @@ export default function Contact(){
           <input type="hidden" name="bot-field" />
           <label className="flex flex-col">
             <span className="text-sm text-gray-300">Name</span>
-            <input required value={name} onChange={e => setName(e.target.value)} className="mt-1 p-3 bg-transparent border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-accent" placeholder="Your name" />
+            <input name="name" required value={name} onChange={e => setName(e.target.value)} className="mt-1 p-3 bg-transparent border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-accent" placeholder="Your name" />
           </label>
 
           <label className="flex flex-col">
             <span className="text-sm text-gray-300">Email</span>
-            <input required type="email" value={email} onChange={e => setEmail(e.target.value)} className="mt-1 p-3 bg-transparent border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-accent" placeholder="you@email.com" />
+            <input name="email" required type="email" value={email} onChange={e => setEmail(e.target.value)} className="mt-1 p-3 bg-transparent border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-accent" placeholder="you@email.com" />
           </label>
 
           <label className="flex flex-col">
             <span className="text-sm text-gray-300">Message</span>
-            <textarea required value={message} onChange={e => setMessage(e.target.value)} rows={6} className="mt-1 p-3 bg-transparent border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-accent" placeholder="Tell me about your project" />
+            <textarea name="message" required value={message} onChange={e => setMessage(e.target.value)} rows={6} className="mt-1 p-3 bg-transparent border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-accent" placeholder="Tell me about your project" />
           </label>
 
           <div>
             <button type="submit" className="inline-block bg-accent text-black px-5 py-3 rounded font-medium">Send</button>
-            <span className="ml-4 text-sm text-gray-300">{status === 'pending' ? 'Sending...' : status === 'success' ? 'Message sent — thanks!' : status === 'error' ? 'Error sending, try again.' : ''}</span>
+            <span className="ml-4 text-sm text-gray-300">{status === 'pending' ? 'Sending...' : status === 'success' ? 'Message sent — thanks!' : status === 'error' ? 'Error sending, try again.' : status === 'fallback-mailto' ? 'Opening mail client...' : (typeof status === 'string' && status ? status : '')}</span>
           </div>
         </form>
       </div>

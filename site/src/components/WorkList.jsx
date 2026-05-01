@@ -231,8 +231,16 @@ export default function WorkList({ onPlay }) {
                       Your browser does not support the video tag.
                     </video>
                     ) : (
-                    <img src={posterSrc} alt={`${p.title} poster`} className="w-full h-44 sm:h-40 object-cover" loading="lazy" decoding="async" />
-                  )}
+                      <img
+                        src={posterSrc}
+                        alt={`${p.title} poster`}
+                        className="w-full h-44 sm:h-40 object-cover"
+                        width={640}
+                        height={360}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 

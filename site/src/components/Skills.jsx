@@ -123,7 +123,7 @@ function SoftwareTile({s}){
     >
       <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{backgroundColor: s.color}}>
           {imgSrc && srcIndex < sources.length ? (
-          <img src={imgSrc} alt={s.name} className="w-7 h-7 object-contain" onError={onImgError} loading="lazy" decoding="async" />
+          <img src={imgSrc} alt={s.name} className="w-7 h-7 object-contain" onError={onImgError} loading="lazy" decoding="async" width={28} height={28} />
         ) : (
           <span className="text-sm font-semibold" style={{color: textColor}}>{label}</span>
         )}
