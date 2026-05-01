@@ -230,8 +230,8 @@ export default function WorkList({ onPlay }) {
                       <source src={videoSrc} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                  ) : (
-                    <img src={posterSrc} alt={`${p.title} poster`} className="w-full h-44 sm:h-40 object-cover" />
+                    ) : (
+                    <img src={posterSrc} alt={`${p.title} poster`} className="w-full h-44 sm:h-40 object-cover" loading="lazy" decoding="async" />
                   )}
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
@@ -272,7 +272,7 @@ export default function WorkList({ onPlay }) {
                       <>
                         {p.client && <div className="text-xs text-indigo-400 font-medium">{p.client}</div>}
                         <h3 className="text-lg font-semibold">
-                          <a href="#" className="hover:underline text-white" onClick={(e) => e.preventDefault()}>{p.title}</a>
+                          <button type="button" onClick={(e) => { e.preventDefault(); if (hasVideo) toggleInline(p) }} className="hover:underline text-white text-left" aria-label={`Preview ${p.title}`}>{p.title}</button>
                         </h3>
                         <p className="text-gray-400 mt-1 text-sm line-clamp-2">{p.desc}</p>
                         <div className="mt-3 flex items-center gap-2">
