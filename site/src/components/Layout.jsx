@@ -27,58 +27,55 @@ export default function Layout({ children }){
       <a href="#main" className="skip-link">Skip to content</a>
 
       <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-sm border-b border-white/5">
-        <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-4">
+        <div className="container flex items-center justify-between py-3 md:py-4">
+          <div className="flex items-center gap-3 min-w-0">
             <img
               src="/assets/profile/profile.png"
               onError={(e) => { e.target.onerror = null; e.target.src = '/assets/profile/profile.svg' }}
               alt="Himansh Sharma"
               width={40}
               height={40}
-              className="hidden sm:block w-10 h-10 rounded-full object-cover"
+              className="hidden sm:block w-10 h-10 rounded-full object-cover flex-shrink-0"
               loading="eager"
               decoding="async"
             />
-            <a href="#main" className="text-xl font-display font-bold">Himansh Sharma</a>
+            <a href="#main" className="text-lg sm:text-xl font-display font-bold truncate">Himansh Sharma</a>
           </div>
 
-          <nav className="hidden md:flex gap-6 items-center text-sm text-gray-300 " aria-label="Primary navigation">
-            <a href="#about" onClick={closeOnNavigate} className="hover:underline hover:text-indigo-500">About</a>
-            <a href="#work" onClick={closeOnNavigate} className="hover:underline hover:text-indigo-500">Work</a>
-            <a href="#services" onClick={closeOnNavigate} className="hover:underline hover:text-indigo-500">Services</a>
-            <a href="#contact" onClick={closeOnNavigate} className="hover:underline hover:text-indigo-500">Contact</a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-indigo-500">Resume</a>
-            
+          <nav className="hidden md:flex gap-8 items-center text-sm text-gray-300" aria-label="Primary navigation">
+            <a href="#about" onClick={closeOnNavigate} className="transition-colors hover:text-indigo-500">About</a>
+            <a href="#work" onClick={closeOnNavigate} className="transition-colors hover:text-indigo-500">Work</a>
+            <a href="#services" onClick={closeOnNavigate} className="transition-colors hover:text-indigo-500">Services</a>
+            <a href="#contact" onClick={closeOnNavigate} className="transition-colors hover:text-indigo-500">Contact</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-500">Resume</a>
           </nav>
 
           {/* Mobile hamburger */}
-          <div className="md:hidden">
-            <button
-              aria-label="Toggle menu"
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-nav"
-              className="inline-flex items-center justify-center p-2"
-              onClick={() => setMobileOpen((s) => !s)}
-            >
-              <span className={`block w-6 h-0.5 bg-gray-200 transition-transform ${mobileOpen ? 'rotate-45 translate-y-1.5' : '-translate-y-1.5'}`}></span>
-              <span className={`block w-6 h-0.5 bg-gray-200 my-1 transition-opacity ${mobileOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`block w-6 h-0.5 bg-gray-200 transition-transform ${mobileOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1.5'}`}></span>
-            </button>
-          </div>
+          <button
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+            className="md:hidden inline-flex items-center justify-center p-2 -mr-2 hover:bg-white/5 rounded-lg transition-colors"
+            onClick={() => setMobileOpen((s) => !s)}
+          >
+            <svg className={`w-6 h-6 transition-transform duration-300 ${mobileOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
         </div>
       </header>
 
       {/* Mobile nav overlay */}
       {mobileOpen && (
-        <div id="mobile-nav" className="fixed inset-0 z-40">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
-          <aside className="absolute top-0 right-0 w-64 h-full bg-primary p-6 text-gray-200">
-            <nav className="flex flex-col gap-6 mt-6" aria-label="Mobile navigation">
-              <a href="#work" onClick={closeOnNavigate} className="text-lg">Work</a>
-              <a href="#services" onClick={closeOnNavigate} className="text-lg">Services</a>
-              <a href="#about" onClick={closeOnNavigate} className="text-lg">About</a>
-              <a href="#contact" onClick={closeOnNavigate} className="text-lg">Contact</a>
-              <a href="/resume.pdf" onClick={closeOnNavigate} target="_blank" rel="noopener noreferrer" className="text-lg">Resume</a>
+        <div id="mobile-nav" className="fixed inset-0 z-40 md:hidden">
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
+          <aside className="absolute top-0 right-0 h-full w-72 bg-gradient-to-b from-primary via-primary to-primary/95 shadow-2xl overflow-y-auto">
+            <nav className="flex flex-col gap-1 p-6 mt-20" aria-label="Mobile navigation">
+              <a href="#about" onClick={closeOnNavigate} className="block px-4 py-3 text-base rounded-lg transition-colors hover:bg-white/10 hover:text-indigo-400 focus-visible:bg-white/10">About</a>
+              <a href="#work" onClick={closeOnNavigate} className="block px-4 py-3 text-base rounded-lg transition-colors hover:bg-white/10 hover:text-indigo-400 focus-visible:bg-white/10">Work</a>
+              <a href="#services" onClick={closeOnNavigate} className="block px-4 py-3 text-base rounded-lg transition-colors hover:bg-white/10 hover:text-indigo-400 focus-visible:bg-white/10">Services</a>
+              <a href="#contact" onClick={closeOnNavigate} className="block px-4 py-3 text-base rounded-lg transition-colors hover:bg-white/10 hover:text-indigo-400 focus-visible:bg-white/10">Contact</a>
+              <a href="/resume.pdf" onClick={closeOnNavigate} target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-base rounded-lg transition-colors hover:bg-white/10 hover:text-indigo-400 focus-visible:bg-white/10">Resume</a>
             </nav>
           </aside>
         </div>
