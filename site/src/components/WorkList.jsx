@@ -313,10 +313,10 @@ export default function WorkList({ onPlay }) {
                           ))}
                         </div>
 
-                        <div className="mt-4 flex items-center gap-4">
+                        <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                           <button
                             onClick={(e) => { e.preventDefault(); if (hasVideo) toggleInline(p) }}
-                            className={`text-sm ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
+                            className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded whitespace-nowrap ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
                             aria-label={`Preview ${p.title}`}
                             disabled={!hasVideo}
                           >
@@ -329,7 +329,7 @@ export default function WorkList({ onPlay }) {
                               if (!hasVideo) return
                               if (onPlay) onPlay({ src: videoSrc, poster: posterSrc, title: p.title, description: p.desc })
                             }}
-                            className={`text-sm ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
+                            className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded whitespace-nowrap ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
                             aria-label={`Watch ${p.title}`}
                             disabled={!hasVideo}
                           >
@@ -338,7 +338,7 @@ export default function WorkList({ onPlay }) {
 
                           <button
                             onClick={(e) => { e.preventDefault(); if (hasVideo) toggleMute(p) }}
-                            className={`text-sm ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
+                            className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded whitespace-nowrap ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
                             aria-label={`Toggle mute for ${p.title}`}
                             disabled={!hasVideo}
                           >
@@ -347,7 +347,7 @@ export default function WorkList({ onPlay }) {
 
                           <button
                             onClick={(e) => { e.preventDefault(); if (hasVideo) openFullscreen(p) }}
-                            className={`text-sm ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
+                            className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded whitespace-nowrap ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
                             aria-label={`Fullscreen ${p.title}`}
                             disabled={!hasVideo}
                           >
@@ -357,14 +357,14 @@ export default function WorkList({ onPlay }) {
                           <a
                             href={videoSrc || '#'}
                             download
-                            className={`text-sm ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
+                            className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded whitespace-nowrap ${hasVideo ? 'text-gray-200 hover:underline' : 'text-gray-600 opacity-50 cursor-not-allowed'}`}
                             aria-label={`Download ${p.title}`}
                             aria-disabled={!hasVideo}
                           >
                             Download
                           </a>
 
-                          <button onClick={(e) => { e.preventDefault(); startEdit(p) }} className="text-sm text-gray-200 hover:underline">Edit</button>
+                          <button onClick={(e) => { e.preventDefault(); startEdit(p) }} className="text-xs sm:text-sm px-2 sm:px-3 py-1 rounded whitespace-nowrap text-gray-200 hover:underline">Edit</button>
                         </div>
                       </>
                     )}
