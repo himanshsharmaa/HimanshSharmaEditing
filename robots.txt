@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Replace the URL below with your live site URL
+Sitemap: https://yourdomain.com/sitemap.xml

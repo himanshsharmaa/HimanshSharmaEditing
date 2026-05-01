@@ -15,8 +15,26 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-F6s9Mt6L.js"></script>
+    <!-- Preload Google Fonts stylesheet and load non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Preload hero/profile image to improve LCP (optimize-images script will generate WebP variants) -->
+    <link rel="preload" as="image" href="/assets/profile/profile.png">
+
+    <!-- Structured data: replace example.com with your site URL -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Himansh Sharma",
+      "url": "https://yourdomain.com",
+      "sameAs": ["https://www.linkedin.com/in/himanshsharmaa/","https://www.instagram.com/himansh.films/"],
+      "jobTitle": "Video Editor",
+      "image": "/assets/profile/profile.png"
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-BfNObvI4.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BaH7D0hZ.css">
   </head>
   <body>
