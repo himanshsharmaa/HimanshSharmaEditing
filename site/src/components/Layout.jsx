@@ -43,7 +43,7 @@ export default function Layout({ children }){
             <a href="#services" onClick={closeOnNavigate} className="hover:underline">Services</a>
             <a href="#about" onClick={closeOnNavigate} className="hover:underline">About</a>
             <a href="#contact" onClick={closeOnNavigate} className="hover:underline">Contact</a>
-            <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">Resume</a>
             
           </nav>
 
@@ -74,7 +74,7 @@ export default function Layout({ children }){
               <a href="#services" onClick={closeOnNavigate} className="text-lg">Services</a>
               <a href="#about" onClick={closeOnNavigate} className="text-lg">About</a>
               <a href="#contact" onClick={closeOnNavigate} className="text-lg">Contact</a>
-              <a href="/Resume.pdf" onClick={closeOnNavigate} target="_blank" rel="noopener noreferrer" className="text-lg">Resume</a>
+              <a href="/resume.pdf" onClick={closeOnNavigate} target="_blank" rel="noopener noreferrer" className="text-lg">Resume</a>
             </nav>
           </aside>
         </div>
