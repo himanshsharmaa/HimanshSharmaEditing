@@ -104,7 +104,7 @@ function getLevel(years){
 
 function SoftwareTile({s}){
   const [srcIndex, setSrcIndex] = React.useState(0)
-  const sources = [s.iconSvg, s.icon].filter(Boolean)
+  const sources = [s.icon, s.iconSvg].filter(Boolean)
   
   const tileVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -161,9 +161,9 @@ function SoftwareTile({s}){
       onClick={()=>emitAnalytics('click')}
       onKeyDown={handleKey}
     >
-      <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" style={{backgroundColor: s.color}}>
-          {imgSrc && srcIndex < sources.length ? (
-          <img src={imgSrc} alt={s.name} className="w-7 h-7 object-contain" onError={onImgError} loading="lazy" decoding="async" width={28} height={28} />
+      <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden bg-white/5 ring-1 ring-white/10">
+        {imgSrc && srcIndex < sources.length ? (
+          <img src={imgSrc} alt={s.name} className="w-8 h-8 object-contain" onError={onImgError} loading="lazy" decoding="async" width={32} height={32} />
         ) : (
           <span className="text-sm font-semibold" style={{color: textColor}}>{label}</span>
         )}
