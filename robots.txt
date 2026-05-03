@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-# Replace the URL below with your live site URL
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://himansh-sharma-editing.vercel.app/sitemap.xml

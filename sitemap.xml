@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Replace example.com with your real domain -->
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://himansh-sharma-editing.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/#about</loc>
+    <loc>https://himansh-sharma-editing.vercel.app/#about</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/#work</loc>
+    <loc>https://himansh-sharma-editing.vercel.app/#work</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/#services</loc>
+    <loc>https://himansh-sharma-editing.vercel.app/#services</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/#contact</loc>
+    <loc>https://himansh-sharma-editing.vercel.app/#contact</loc>
   </url>
 </urlset>
