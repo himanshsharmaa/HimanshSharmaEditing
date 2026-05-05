@@ -199,6 +199,32 @@
       "tags": [
         "Motion Graphics"
       ]
+    },
+    {
+      "id": 20,
+      "title": "AMG G63 Advertisement",
+      "desc": "High-octane cinematic advertisement showcasing the luxury AMG G63 for OneClickDrive premium car rental",
+      "video": "oneclickdrive.mp4",
+      "poster": "oneclickdrive.webp",
+      "client": "OneClickDrive",
+      "year": 2025,
+      "tags": [
+        "Commercial",
+        "Brand Film"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Dr. Trilok Singh",
+      "desc": "Inspirational speaker video created for Zoc Learning",
+      "video": "dr. trilok singh.mp4",
+      "poster": "dr. trilok singh.webp",
+      "client": "Zoc Learning",
+      "year": 2025,
+      "tags": [
+        "Corporate",
+        "Inspirational"
+      ]
     }
   ]
 }
